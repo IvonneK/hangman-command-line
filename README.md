@@ -10,17 +10,17 @@ The app pics a random word from a word list and the number of letters is display
 - JavaScript 
 - node.js 
 - npm modules used:<br>
-**inquirer** used to prompt user and get input response
-**chalk** used to change background color
-**clear** used to have the ability to clear the screen
+**inquirer** used to prompt user and get input response<br>
+**chalk** used to change Logo text and background color<br>
+**clear** used to have the ability to clear the screen<br>
 **figlet** used to create big graphic "HANGMAN" Logo letters
 
 ## Built With:
 * Sublime Text
 
 ## Links: 	
-- https://ivonnek.github.io/hangman-command-line/
-- https://github.com/IvonneK/hangman-command-line<br>
+- https://ivonnek.github.io/hangman-command-line/<br>
+- https://github.com/IvonneK/hangman-command-line/
 
 
 ## Author: 

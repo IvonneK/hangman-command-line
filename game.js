@@ -13,7 +13,7 @@ var figlet      = require('figlet');
 
 clear();
 console.log(
-  chalk.blue.bgCyan.bold(
+  chalk.red.bgCyan.bold(
     figlet.textSync('HANGMAN', { horizontalLayout: 'full' })
   )
 );
