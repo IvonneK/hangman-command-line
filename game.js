@@ -5,53 +5,64 @@
 // or runs out of guesses.
 
 var inquirer = require('inquirer');
-var Letter = require('./Letter');
 var Word = require('./Word');
+var Letter = require('./Letter');
+var chalk       = require('chalk');
+var clear       = require('clear');
+var figlet      = require('figlet');
 
-var newWord;
-
-inquirer.prompt([
-  {type: "input",
-    name: "username",
-    message: "What's your name?"},
-  {type: "input",
-    name: "capacity",
-    message: "Enter a maximum number of letters"},
+clear();
+console.log(
+  chalk.blue.bgCyan.bold(
+    figlet.textSync('HANGMAN', { horizontalLayout: 'full' })
+  )
+);
 
 
-]).then(function(data){
-	  var letters = [];
-      newWords = new Word([], data.username, data.capacity);
+// Start of game Random Word and dash setup
+var wordList = ['it', 'love', 'hearts'];
+console.log('word list', wordList);
 
-      askToAddLetter();
-});
+var randomWordIndex = Math.floor(Math.random()*wordList.length);
+console.log('random index is', randomWordIndex);
 
-function newLetter() {
+var randomWord = wordList[randomWordIndex];
+
+// create a new word by cloning randomWord and its properties
+var wordFromGuesses = new Word(randomWord);
+console.log('new Word cloned from randomWord', wordFromGuesses);
+console.log('word is', randomWord);
+var numOfLetters = randomWord.length
+
+var dashes = [];
+// create dashes on the screen start with 1st letter;
+for (var i = 0; i < numOfLetters; i++){
+	dashes.push(' _ ');
+};
+
+var displayDashString = dashes.toString()
+displayDashString = displayDashString.replace(/,/g,'');
+console.log('Word has ' + numOfLetters + ' letters ' + displayDashString +'\n');
+// 
+
+function guessLetterPrompt(){
 	inquirer.prompt([
-		{type: "input",
-			name: 'addLetter',
-			message: "Enter Letter to guess the hangman word"}
-
+	  {type: "input",
+	    name: "letter",
+	    message: "Type a letter to guess the " + numOfLetters + " letter word (or no to exit)"},
 	]).then(function(data){
-		var newLetter = new Letter(data.addLetter);
-		newWord.addLetter(newLetter);
-
-		console.log(newWord);
-		askToAddLetter();		
+		if (letter != 'no') {
+			console.log(data.letter);
+			var letters = [];
+		    newWord = new Word(letters, data.letter);
+			console.log(newWord);
+			console.log('before AddLetter');
+			Letter();
+		    console.log('after AddLetter')
+	    }
 	});
 };
 
-function asktoAddLetter(){
-	inquirer.prompt([
-		{type: 'input',
-			name: 'addLetters',
-			message: 'Do you want to add letters to the word?'}
+guessLetterPrompt();
 
-	]).then(function(data){
-		if (data.addLetters == 'yes') {
-			newLetter();
-		}else{
-			console.log(newWord);
-		}
-	});
-}
+	
