@@ -7,15 +7,15 @@ var Letter = require('./Letter.js')
 function Word(wordToGuess){
 	console.log('word.js');
 	this.wordToGuess = wordToGuess;
-	this.lettersToCheck = [];
+	// this.letterToCheck = [];
 
-	this.buildWord = function(lettersToCheck) {
+	this.buildWord = function(letterToCheck) {
+		this.letterToCheck = letterToCheck
 		wordToGuess = wordToGuess.split("");
 		console.log('wordtoguess array', wordToGuess)
 		for (var i = 0; i < wordToGuess.length; i++){
-			if (lettersToCheck == wordToGuess[i]){
-				console.log('lettersToCheck=wordToGuess[i]', lettersToCheck);
-
+			if (letterToCheck == wordToGuess[i]){
+				console.log('letterToCheck=wordToGuess[i]', letterToCheck);
 				
 			}
 		}
