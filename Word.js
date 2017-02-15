@@ -7,12 +7,13 @@ var Letter = require('./Letter.js')
 function Word(wordToGuess){
 	console.log('inside Word.js');
 	this.wordToGuess = wordToGuess;
+	wordToGuess = wordToGuess.split("");
 	this.buildWord = function(letterToCheck) {
-		this.letterToCheck = letterToCheck
+		this.letterToCheck = letterToCheck;
 		console.log('Word.js wordToGuess.buildWord function');
-		wordToGuess = wordToGuess.split("");
-		console.log('Word.js split wordToGuess ', wordToGuess)
+		console.log('Word.js just split wordToGuess ', wordToGuess)
 		for (var i = 0; i < wordToGuess.length; i++){
+			console.log('Word.js for loop check letter index i =', i);
 			if (letterToCheck == wordToGuess[i]){
 				console.log('word.js letterToCheck=wordToGuess[i]', letterToCheck);
 				console.log('word.js need to call function in letter.js to replace - position with letter pushed');
@@ -20,6 +21,8 @@ function Word(wordToGuess){
 				dashToLetter = new Letter(letterToCheck, dashes, i)
 			}
 		}
+
+
 	}
 
 	console.log('Word.js word ToGuess:', wordToGuess);
@@ -36,9 +39,10 @@ function Word(wordToGuess){
 
 };
 
-// Word.prototype.addLetter = function(l){
-// 	// if(this.letters.length < lettersToGuess.length){
-// 		this.letters.push(l);
+// Word.prototype.addLetter = function(letterToCheck){
+// console.log('whatever!!!!')
+// 	if(this.letters.length < lettersToGuess.length){
+// 		this.letters.push(letterToCheck);
 // 	}
 // }
 

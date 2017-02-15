@@ -47,7 +47,7 @@ function guessLetterPrompt(){
 				console.log('game.js: inputdata.letterGuessed not no', data.letterGuessed);
 				console.log('game.js: call function in Word.js wordToGuess.buildWord')
 			    wordToGuess.buildWord(data.letterGuessed);
-				
+			    guessLetterPrompt();
 		    }
 		});
 };
