@@ -15,10 +15,11 @@ function Word(wordToGuess){
 		for (var i = 0; i < wordToGuess.length; i++){
 			console.log('Word.js for loop check letter index i =', i);
 			if (letterToCheck == wordToGuess[i]){
-				console.log('word.js letterToCheck=wordToGuess[i]', letterToCheck);
-				console.log('word.js need to call function in letter.js to replace - position with letter pushed');
-				console.log('word.js', dashes);
+				console.log('Word.js letterToCheck=wordToGuess[i]', letterToCheck);
+				console.log('Word.js need to call function in letter.js to replace - position with letter pushed');
+				console.log('Word.js', dashes);
 				dashToLetter = new Letter(letterToCheck, dashes, i)
+				console.log('Word.js what is dashToLetter.dashes ****** ', dashToLetter.dashes);
 			}
 		}
 
@@ -34,7 +35,7 @@ function Word(wordToGuess){
 	};
 	var displayDashString = dashes.toString()
 	displayDashString = displayDashString.replace(/,/g,'');
-	console.log('Word has ' + wordToGuess.length + ' letters ' + displayDashString +'\n');
+	console.log('Word.js has ' + wordToGuess.length + ' letters ' + displayDashString +'\n');
 
 
 };

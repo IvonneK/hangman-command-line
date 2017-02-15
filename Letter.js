@@ -15,6 +15,7 @@ function Letter(letterToCheck, dashes, i){
 				this.dashes[j] = letterToCheck;
 			}
 		}
+
 	}
 
 	console.log('letter.js', dashes)
