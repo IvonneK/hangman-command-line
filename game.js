@@ -35,20 +35,23 @@ console.log('new Word cloned from randomWord', wordToGuess);
  
 
 function guessLetterPrompt(){
-	inquirer.prompt([
-	  {type: "input",
-	    name: "letterGuessed",
-	    message: "Type a letter to guess the " + randomWord.length + " letter word (or no to exit)"},
-	]).then(function(data){
-		console.log('wordToGuess',wordToGuess)
-			console.log('data', data);
-		if (data.letterGuessed != 'no') {
-			console.log('after if data.letterGuessed', data.letterGuessed);
-		    wordToGuess.buildWord(data.letterGuessed);
-			
-	    }
-	});
+		console.log('game.js guessLetterPrompt');
+		inquirer.prompt([
+		  {type: "input",
+		    name: "letterGuessed",
+		    message: "Type a letter to guess the " + randomWord.length + " Letter Word (or no to exit)"},
+		]).then(function(data){
+			console.log('wordToGuess',wordToGuess)
+				console.log('data', data);
+			if (data.letterGuessed != 'no') {
+				console.log('game.js: inputdata.letterGuessed not no', data.letterGuessed);
+				console.log('game.js: call function in Word.js wordToGuess.buildWord')
+			    wordToGuess.buildWord(data.letterGuessed);
+				
+		    }
+		});
 };
+
 
 guessLetterPrompt();
 
