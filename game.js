@@ -10,8 +10,6 @@ var chalk       = require('chalk');
 var clear       = require('clear');
 var figlet      = require('figlet');
 
-
-
 hangmanLogo();
 // Start of game Random Word and dash setup
 var wordList = ['javascript', 'node', 'html', 'css', 'jquery', 'mysql', 'api'];
@@ -25,7 +23,7 @@ var guessesLeft = 15; //longest word is 10 positions that is why 15 tries the ma
 var wordToGuess = new Word(randomWord, match, guessesLeft);
 // console.log('game.js new Word cloned from randomWord', wordToGuess);
  
-
+ 
 function hangmanLogo(){
 	clear();
 	console.log(

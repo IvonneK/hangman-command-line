@@ -1,10 +1,13 @@
 hangman-command-line
 # Hangman from the command line
-Hangman Game is a node app that uses npm inquirer, chalk, clear and figlet. It requires 2 constructor files (word.js and letter.js). Constructors are used to create a new object without creating redundancies (I call it cloning).<br> 
-The app pics a random word from a word list and the number of letters is displayed. The player is then prompted to enter a letter until the word is guessed. The letters are displayed with underscores  '_ o _ _' and underscores are replaced with correct guesses until all letters are guessed. The the app displays the word.
+This app is a node Hangman command line app.  It uses JavaScript, npm inquirer, chalk, clear and figlet. It requires 2 constructor files (word.js and letter.js). Constructors are used to create a new object without creating redundancies (I call it cloning).<br> 
+The app picks a random word from a word list then displays the number of letters with a description of type of word. The player is then prompted to enter a letter and also displays the number of guess they have. The number of letters are displayed with underscores  '_ o _ _' then underscores are replaced with correct letter until all letters are guessed. If the player guess all letter the app displays a new figlet with the word in it.
 
 ## What it looks like:
-![alt text](screenshots/hangmanscreen1.png "Hangman Screen")
+![alt text](screenshots/hangmanstartscreen1.png "Hangman Screen START")
+![alt text](screenshots/hangmannomatchscreen2.png "Hangman Screen NO MATCH")
+![alt text](screenshots/hangmanwinscreen3.png "Hangman Screen YOU WIN")
+
 
 ## Technologies Used: 
 - JavaScript 
