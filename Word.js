@@ -13,13 +13,10 @@ function Word(wordToGuess, matchFound,guessesLeft){
 	this.buildWord = function(letterToCheck) {
 		this.letterToCheck = letterToCheck;
 		this.guessesLeft = this.guessesLeft - 1;
-		// console.log('Word.js wordToGuess.buildWord function');
 		// console.log('Word.js just split wordToGuess ', wordToGuess)
 		for (var i = 0; i < this.wordToGuess.length; i++){
 			if (this.letterToCheck == this.wordToGuess[i]){
 				// console.log('Word.js letterToCheck=wordToGuess[i]', letterToCheck);
-				// console.log('Word.js need to call function in letter.js to replace - position with letter pushed');
-				// console.log('Word.js', dashes);
 				dashToLetter = new Letter(letterToCheck, dashes, i);
 				this.dashToLetter = dashToLetter;
 				// console.log('word.js dashToLetter show this.dashToLetter', this.dashToLetter);
@@ -31,7 +28,7 @@ function Word(wordToGuess, matchFound,guessesLeft){
 			this.matchFound = false;
 			// console.log('matchFound', this.matchFound);			
 			noMatchGuesses.push(this.letterToCheck);
-			console.log("\n [word.js]...SORRY, NO MATCH FOUND. Incorrect Letters guessed so far " + noMatchGuesses + ". \n");
+			console.log("\n [m1.word.js]...SORRY, NO MATCH FOUND. Incorrect Letters guessed so far " + noMatchGuesses + ". \n");
 			return;
 		}
 

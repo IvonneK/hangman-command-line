@@ -3,12 +3,17 @@
 // Running it in Terminal/Bash will start the game.
 // The app should end when a player guesses the correct word 
 // or runs out of guesses.
+// Web Developer: Ivonne Komis
+// PURPOSE OF APP: Hangman command line Game with the use of constructors
+// Used: Javascript Node.js and installed npm packages listed (require)  below
+// inquirer, chalk, clear, figlet and say for audio when player wins
 
 var inquirer 	= require('inquirer');
 var Word 		= require('./Word');
 var chalk       = require('chalk');
 var clear       = require('clear');
 var figlet      = require('figlet');
+var say 		= require('say');
 
 hangmanLogo();
 // Start of game Random Word and dash setup
@@ -41,22 +46,11 @@ function guessLetterPrompt(){
 		    name: "letterGuessed",
 		    message: "You have *" + wordToGuess.guessesLeft + "* guesses left.  Type a letter to guess the " + wordToGuess.wordToGuess.length + " Letter Technology (or no to exit)"},
 		]).then(function(data){
-			// console.log('game.js wordToGuess',wordToGuess)
 			// console.log('game.js data', data);
 			if (data.letterGuessed != 'no') {
 			    wordToGuess.buildWord(data.letterGuessed);
 			    // console.log('games.js word to guess object', wordToGuess);
-			    // console.log('games.js word to guess wordToGuess.wordToGuess', wordToGuess.wordToGuess);
-			    // console.log('games.js letter wordToGuess.letterToCheck', wordToGuess.letterToCheck);
-			    // console.log('game.js value wordToGuess.matchFound', wordToGuess.matchFound);
-			    // console.log('game.js before if statement');
-			    // if (wordToGuess.matchFound === false){
-			    	// console.log('\n [m1.game.js]   SORRY, NO MATCH FOUND try to guess different letter \n');
-			    	// console.log(data.letterGuessed)
-			    	// guessLetterPrompt();
-			    // }
-			 	// else{
-			 		if(wordToGuess.matchFound === true){
+			   	if(wordToGuess.matchFound === true){
 				    	// console.log('game.js dashToLetter exists', dashToLetter.dashes);
 					    var checkIfGuessed = dashToLetter.dashes.indexOf(' _ ')
 					    if (checkIfGuessed > -1){
@@ -71,19 +65,20 @@ function guessLetterPrompt(){
 					}else{
 						guessLetterPrompt();
 					}
-				// };
 			}else{
-				console.log('\n [m1.game.js]  EXIT HANGMAN GAME, no was entered \n');
+				console.log('\n [m1.game.js]... EXIT HANGMAN GAME, no was entered \n');
 				return;
 			};
 		});
 	}else{
-		console.log("[game.js]...  GAME OVER!!!  YOU have " + wordToGuess.guessesLeft + " Guesses Left. \n");
+		console.log("[m2.game.js]...  GAME OVER!!!  YOU have " + wordToGuess.guessesLeft + " Guesses Left. \n");
 	};
 };
 
 //  display word guessed as a string without commas 
 function youWin(noDashesMakeString) {
+
+	say.speak('You WIN!!! Congratulations, you guessed the Hangman name of the Technology used', 'Alex', 1.2);
 	clear();
 	console.log(
 	  chalk.red.bgCyan.bold(
@@ -91,7 +86,7 @@ function youWin(noDashesMakeString) {
 	  )
 	);
 	console.log(
-		chalk.red.bgCyan.bold('[m2.game.js]  You WIN!!! Congratulations, you guessed the Hangman name of the Technology used ' + noDashesMakeString + '\n' + '\n')
+		chalk.red.bgCyan.bold('[m2.game.js]... You WIN!!! Congratulations, you guessed the Hangman name of the Technology used ' + noDashesMakeString + '\n' + '\n')
 		);  
 };
 

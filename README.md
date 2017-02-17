@@ -4,9 +4,9 @@ This app is a node Hangman command line app.  It uses JavaScript, npm inquirer, 
 The app picks a random word from a word list then displays the number of letters with a description of type of word. The player is then prompted to enter a letter and also displays the number of guess they have. The number of letters are displayed with underscores  '_ o _ _' then underscores are replaced with correct letter until all letters are guessed. If the player guess all letter the app displays a new figlet with the word in it.
 
 ## What it looks like:
-![alt text](screenshots/hangmanstartscreen1.png "Hangman Screen START")
-![alt text](screenshots/hangmannomatchscreen2.png "Hangman Screen NO MATCH")
-![alt text](screenshots/hangmanwinscreen3.png "Hangman Screen YOU WIN")
+![alt text](screenshots/hangmanScreen1.png "Hangman Screen START")
+![alt text](screenshots/hangmanScreen2.png "Hangman Screen NO MATCH")
+![alt text](screenshots/hangmanScreen3.png "Hangman Screen YOU WIN")
 
 
 ## Technologies Used: 

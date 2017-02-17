@@ -29,9 +29,8 @@ function Letter(letterToCheck, dashes, i){
 	    figlet.textSync('HANGMAN', { horizontalLayout: 'full' })
 	  )
 	);
-	console.log ("\n [32.letter.js]...Technology used by Rutgers Coding Bootcampe: " + letterDisplay + "\n");
+	console.log ("\n [m1.letter.js]...Technology used by Rutgers Coding Bootcampe: " + letterDisplay + "\n");
 	// console.log('letter.js dashes value ', dashes)
-
 }
 
 
